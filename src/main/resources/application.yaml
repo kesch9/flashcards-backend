@@ -8,3 +8,7 @@ spring:
       uri: mongodb://localhost:27017
       database: dict
 
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+

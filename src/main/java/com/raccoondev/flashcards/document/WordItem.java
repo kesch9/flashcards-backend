@@ -1,6 +1,7 @@
 package com.raccoondev.flashcards.document;
 
 import jakarta.validation.constraints.NotNull;
+import java.util.List;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.mongodb.core.index.TextIndexed;
@@ -19,5 +20,5 @@ public class WordItem {
     private String word;
     private String transcription;
 
-    private String[] translates;
+    private List<String> translates;
 }
