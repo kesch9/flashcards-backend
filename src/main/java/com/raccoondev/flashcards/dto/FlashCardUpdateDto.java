@@ -7,8 +7,9 @@ import lombok.NonNull;
 
 @Data
 @Builder
-public class FlashCardCreateDto {
+public class FlashCardUpdateDto {
     @NonNull
+    private String id;
     private String theme;
     Set<WordDto> words;
 }

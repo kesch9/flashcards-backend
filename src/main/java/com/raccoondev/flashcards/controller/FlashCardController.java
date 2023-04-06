@@ -1,7 +1,8 @@
 package com.raccoondev.flashcards.controller;
 
-import com.raccoondev.flashcards.document.FlashCard;
+import com.raccoondev.flashcards.dto.FlashCardCreateDto;
 import com.raccoondev.flashcards.dto.FlashCardDto;
+import com.raccoondev.flashcards.dto.FlashCardUpdateDto;
 import com.raccoondev.flashcards.service.FlashCardService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -21,22 +22,22 @@ public class FlashCardController {
     private final FlashCardService flashCardService;
 
     @GetMapping
-    public List<FlashCard> getCard() {
+    public List<FlashCardDto> getCard() {
         return flashCardService.findAll();
     }
 
     @GetMapping(value = "/{theme}")
-    public FlashCard getCardByTheme(@PathVariable String theme) {
+    public FlashCardDto getCardByTheme(@PathVariable String theme) {
         return flashCardService.findByTheme(theme);
     }
 
     @PostMapping(value = "/addCard")
-    public FlashCard addFlashCard(@RequestBody FlashCardDto flashCard) {
+    public FlashCardDto addFlashCard(@RequestBody FlashCardCreateDto flashCard) {
         return flashCardService.insert(flashCard);
     }
 
     @PutMapping(value = "/updateCard")
-    public FlashCard updateFlashCard(@RequestBody FlashCardDto flashCard) {
+    public FlashCardDto updateFlashCard(@RequestBody FlashCardUpdateDto flashCard) {
         return flashCardService.update(flashCard);
     }
 }

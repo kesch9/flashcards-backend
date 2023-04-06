@@ -1,7 +1,7 @@
 package com.raccoondev.flashcards.document;
 
 import jakarta.validation.constraints.NotNull;
-import java.util.List;
+import java.util.Set;
 import lombok.Builder;
 import lombok.Data;
 
@@ -14,5 +14,5 @@ public class UserFlashCard {
     @Builder.Default
     private boolean isLearned = false;
 
-    private List<UserWord> words;
+    private Set<UserWord> words;
 }

@@ -1,15 +1,20 @@
 package com.raccoondev.flashcards.service;
 
-import com.raccoondev.flashcards.document.FlashCard;
+import com.raccoondev.flashcards.dto.FlashCardCreateDto;
 import com.raccoondev.flashcards.dto.FlashCardDto;
+import com.raccoondev.flashcards.dto.FlashCardUpdateDto;
 import java.util.List;
 
 public interface FlashCardService {
-    List<FlashCard> findAll();
+    List<FlashCardDto> findAll();
 
-    FlashCard findByTheme(String theme);
+    FlashCardDto findByTheme(String theme);
 
-    FlashCard insert(FlashCardDto dto);
+    FlashCardDto getFlashCardById(String id);
 
-    FlashCard update(FlashCardDto dto);
+    FlashCardDto insert(FlashCardCreateDto dto);
+
+    FlashCardDto update(FlashCardUpdateDto dto);
+
+    FlashCardDto addWord(String cardId, String wordId);
 }

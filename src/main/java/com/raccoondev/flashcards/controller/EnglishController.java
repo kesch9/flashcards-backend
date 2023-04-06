@@ -1,7 +1,7 @@
 package com.raccoondev.flashcards.controller;
 
 import com.raccoondev.flashcards.dto.WordDto;
-import com.raccoondev.flashcards.service.EnglishWordService;
+import com.raccoondev.flashcards.service.WordService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/english")
 public class EnglishController {
 
-    private final EnglishWordService englishWordService;
+    private final WordService englishWordService;
 
     private final ModelMapper modelMapper;
 

@@ -9,15 +9,15 @@ public interface UserService {
 
     User addUser(User user);
 
-    User learnWord(String word);
+    User learnWord(String email, String word);
 
-    User learnFlashCard(String flashCardTheme);
+    User learnFlashCard(String email, String theme);
 
-    User addFlashCard(String flashCardId);
+    User addFlashCard(String email, String flashCardId);
 
-    User addWord(String flashCardId, String wordId);
+    User addWord(String email, String theme, String wordId);
 
-    User createCustomFlashCard(FlashCardCreateDto dto);
+    User createCustomFlashCard(String email, FlashCardCreateDto dto);
 
-    User addCustomWord(String flashCardId, WordCreateDto dto);
+    User addCustomWord(String email, String theme, WordCreateDto dto);
 }

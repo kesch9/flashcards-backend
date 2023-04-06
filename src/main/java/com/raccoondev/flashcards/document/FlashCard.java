@@ -19,6 +19,6 @@ public class FlashCard {
     @NotNull
     private String theme;
 
-    @DocumentReference(lazy = true, lookup = "{ 'word' : ?#{#target} }")
+    @DocumentReference(lookup = "{ 'word' : ?#{#target} }")
     List<WordItem> words;
 }

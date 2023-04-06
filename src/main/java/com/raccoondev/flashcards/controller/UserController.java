@@ -33,10 +33,10 @@ public class UserController {
     public User learn(@PathVariable String email, @RequestParam Optional<String> flashCardTheme,
         @RequestParam Optional<String> word) {
         if (flashCardTheme.isPresent()) {
-            return userService.learnFlashCard(flashCardTheme.get());
+            return userService.learnFlashCard(email, flashCardTheme.get());
         }
         if (word.isPresent()) {
-            return userService.learnWord(word.get());
+            return userService.learnWord(email, word.get());
         }
         return userService.getUserByEmail(email);
     }

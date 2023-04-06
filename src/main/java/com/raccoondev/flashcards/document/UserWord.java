@@ -1,13 +1,18 @@
 package com.raccoondev.flashcards.document;
 
-import com.raccoondev.flashcards.dto.WordDto;
+import jakarta.validation.constraints.NotEmpty;
 import java.util.List;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NonNull;
 
 @Data
 @Builder
-public class UserWord extends WordDto {
+public class UserWord {
     private boolean isLearned;
-    List<UserWord> words;
+    @NonNull
+    private String word;
+    private String transcription;
+    @NotEmpty
+    private List<String> translates;
 }

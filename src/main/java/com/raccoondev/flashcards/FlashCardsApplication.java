@@ -1,11 +1,10 @@
 package com.raccoondev.flashcards;
 
+import de.flapdoodle.embed.mongo.spring.autoconfigure.EmbeddedMongoAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-@SpringBootApplication
-@EnableWebMvc
+@SpringBootApplication(exclude = {EmbeddedMongoAutoConfiguration.class})
 public class FlashCardsApplication {
 
     public static void main(String[] args) {
